@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+
+<!-- 1. Google Fonts Preconnect Connections -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- 2. The Actual Font Request (Josefin Sans) -->
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+  
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 0.6875rem; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style>
+</head>
+<body>
+    <img src="images/bg-desktop-light.jpg" class="bg-image" id="theme-bg-image">
+    <header class="main-header">
+      <h2>TODO</h2>
+      <div class="theme-icon-container">
+        <img id="theme-icon" class="toggle-theme-icon light-mode" src="images/icon-moon.svg" alt="Switch to Dark Mode">
+      </div>
+    </header>
+
+    <main>
+      <div class="input-container">
+        <input class="checkbox-icon create-todo" type="checkbox">
+        <input type="text" id="todo-input" class="input-todo-box" placeholder="Create a new todo...">
+      </div>
+
+      <div class="todo-list-container">
+        
+
+        <footer class="input-container-footer">
+          <p class="items-numbering"><span id="items-no" class="no-of-items"></span> items left</p>
+
+          <div class="filter-list-status">
+            <p class="list-status active" id="all">All</p>
+            <p class="list-status" id="active">Active</p>
+            <p class="list-status" id="completed">Completed</p>
+          </div>
+
+          <p class="clear-completed" id="clear-completed">Clear Completed</p>
+        </footer>
+      </div>
+
+      <p class="drag-n-drop">Drag and drop to reorder list</p>
+
+    </main>
+
+    <footer class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+      Coded by <a href="#">Uthman Naeemah</a>.
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

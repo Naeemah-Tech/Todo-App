@@ -1,0 +1,318 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*General Styles*/
+    --border-radius: 0.3rem;
+    --font-family: "Josefin Sans", sans-serif;
+    --checkbox-gradient: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    --box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.15);
+
+    /*Light Mode*/
+    --bg-light: #fafafa;
+    --light-surface: #fdfdfd;
+    --light-primary-text: #111;
+    --light-blue-text: #5858ff;
+    --light-text-muted: #b6b5b5;
+    --light-secondary-text: #777;
+    --light-checkbox-border: #cfcfcf;
+    --light-blurry-underline: #dbdbdb;
+
+    /*Dark Mode*/
+    --bg-dark: #161722;
+    --dark-surface: #25273c;
+    --dark-primary-text: #cacde8;
+    --dark-text-hover: #e4e5f1;
+    --dark-text-muted: #777a92;
+    --dark-border-color: #393a4c;
+}
+
+body{
+    background-color: var(--bg-light);
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 18px;
+    position: relative;
+    margin: 0;
+}
+
+body.dark-mode{
+    background-color: var(--bg-dark);
+}
+
+.bg-image{
+    width: 100%;
+    height: 250px;
+    position: absolute;
+    z-index: -1;
+}
+
+.main-header, main, .attribution{
+    position: relative;
+    z-index: 1;
+    top: 5rem;
+    margin: auto;
+    text-align: center;
+    max-width: 500px;
+}
+
+.main-header{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.main-header h2{
+    letter-spacing: 0.6rem;
+    color: var(--bg-light);
+    font-weight: bolder;
+}
+
+.toggle-theme-icon{
+    cursor: pointer;
+}
+
+.input-container{
+    max-width: 100%;
+    background-color: var(--light-surface);
+    border-radius: var(--border-radius);
+    margin-bottom: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    font-weight: 500;
+}
+
+body.dark-mode .input-container{
+    background-color: var(--dark-surface);
+}
+
+.checkbox-icon{
+    appearance: none;
+    -webkit-appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 1.2px solid var(--light-checkbox-border);
+    border-radius: 50%;
+    cursor: pointer;
+    align-items: center;
+}
+
+body.dark-mode .checkbox-icon{
+    border: 1.5px solid var(--dark-border-color);
+}
+
+.checkbox-icon.active{
+    border-image: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)) 1;
+}
+
+.checkbox-icon:checked{
+    background:  url("images/icon-check.svg"), linear-gradient(135deg, #8181ff 40%, #9a01d6 90%);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    background-size: 50%, 100%;
+    border-color: none;
+}
+
+.input-todo-box{
+    width: 90%;
+    height: 2rem;
+    padding: 0.8rem;
+    font-size: 1.3rem;
+    font-family: var(--font-family);
+    background-color: var(--light-surface);
+    outline: none;
+    border: none;
+    align-items: center;
+    font-size: 1.2rem;
+    letter-spacing: -0.5px;
+}
+
+body.dark-mode .input-todo-box{
+    background-color: var(--dark-surface);
+    color: var(--dark-primary-text);
+}
+
+.input-todo-box::placeholder{
+    font-family: "Josefin Sans", sans-serif;
+    color: var(--light-primary-text);
+}
+
+body.dark-mode .input-todo-box::placeholder{
+    color: var(--dark-primary-text);
+}
+main{
+    margin: auto;
+}
+
+.todo-list-container{
+    background: var(--light-surface);
+    border-radius: var(--border-radius);
+    padding: 5px 0;
+    margin: 0;
+    box-shadow: 0px 5px 16px rgba(0, 0, 0, 0.15);
+    color: var(--light-primary-text);
+    margin-bottom: 3rem;
+}
+
+body.dark-mode .todo-list-container{
+    background: var(--dark-surface);
+}
+
+.todo-list{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    padding: 1rem;
+    padding-right: 1.2rem;
+    width: 100%;
+    border-bottom: 1.5px solid var(--light-blurry-underline);
+    margin: auto;
+    text-align: left;
+    font-size: medium;
+}
+
+body.dark-mode .todo-list{
+    border-bottom-color: var(--dark-border-color);
+}
+
+.todo-Item {
+    color: var(--light-primary-text);
+    text-align: left;
+}
+
+body.dark-mode .todo-Item{
+    color: var(--dark-primary-text);
+}
+
+.todo-list.completed p{
+    margin: 0;
+    text-align: left;
+    text-decoration: line-through;
+    color: var(--light-text-muted);
+}
+
+body.dark-mode .todo-list.completed p{
+    color: var(--dark-text-muted);
+}
+
+.close-icon{
+    position: absolute;
+    right: 1rem;
+    cursor: pointer;
+}
+
+.input-container-footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--light-secondary-text);
+    padding: 1rem 1rem;
+    gap: 2.5rem;
+}
+
+body.dark-mode .input-container-footer{
+    color: var(--dark-text-muted);
+}
+
+.filter-list-status{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 900;
+}
+
+body.dark-mode .filter-list-status{
+    background-color: var(--dark-surface);
+}
+
+.list-status{
+    cursor: pointer;
+}
+
+.list-status:hover, .clear-completed:hover{
+    color: var(--light-primary-text);
+}
+
+body.dark-mode .list-status:hover, .clear-completed:hover{
+    color: var(--dark-text-hover);
+}
+
+.list-status.active{
+    color: var(--light-blue-text);
+}
+
+.clear-completed{
+    cursor: pointer;
+}
+
+.drag-n-drop{
+    color: var(--light-secondary-text);
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+    position: relative;
+    top: 4rem;
+}
+
+body.dark-mode .drag-n-drop{
+    color: var(--dark-text-muted);
+}
+
+.attribution{
+    position: relative;
+}
+
+body.dark-mode .attribution{
+    color: var(--dark-primary-text);
+}
+
+@media only screen and (max-width: 768px) {
+    .main-header, main, .attribution{
+        max-width: 90%;
+        margin: auto;
+        margin-bottom: 2rem;
+        font-size: 15px;
+    }
+
+    .main-header h2{
+        letter-spacing: 0.6rem;
+        color: var(--bg-light);
+        font-weight: bolder;
+        font-size: 1.5rem;
+    }
+
+    .bg-image{
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+
+    .filter-list-status{
+        width: 100%;
+        position: absolute;
+        bottom: -1.2rem;
+        right: 0;
+        margin:auto;
+        align-items: center;
+        justify-content: center;
+        gap: 1.2rem;
+        margin-bottom: 1rem;
+        background-color: var(--light-surface);
+        border-radius: var(--border-radius);
+        padding: 15px;
+        box-shadow: var(--box-shadow);
+    }
+
+    .drag-n-drop{
+        margin-top: 0.5rem;
+        bottom: 0;
+    }
+}
